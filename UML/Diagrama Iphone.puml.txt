@@ -1,0 +1,88 @@
+@startuml
+!define LIGHTORANGE #FFDDC1
+!define LIGHTBLUE #ADD8E6
+
+title Diagrama UML - Papéis do iPhone
+
+skinparam classAttributeIconSize 0
+skinparam class {
+    BackgroundColor LIGHTORANGE
+    BorderColor black
+}
+
+interface "Reprodutor Musical" as ReprodutorMusical {
+  -Musica[] musicas
+  +tocar(): void
+  +pausar(): void
+  +selecionarMusica(): void
+}
+note top of ReprodutorMusical
+  Interface que gerencia a reprodução de músicas.
+  Pode tocar, pausar e selecionar músicas.
+end note
+
+class Musica {
+  nome: String
+  caminho: String
+}
+note top of Musica
+  Armazena informações sobre uma música.
+  Contém nome e caminho do arquivo.
+end note
+
+interface "Aparelho Telefônico" as AparelhoTelefonico {
+  -Contato[] contatos
+  -redeMovelDisponivel(): Boolean
+  +ligar(): void
+  +atender(): void
+  +iniciarCorreioVoz(): void
+}
+note top of AparelhoTelefonico
+  Interface que representa um aparelho telefônico.
+  Possui funções de chamadas e contatos.
+end note
+
+class Contato {
+  nome: String
+  numero: String
+}
+note top of Contato
+  Representa um contato com nome e número.
+end note
+
+interface "Navegador de Internet" as NavegadorInternet {
+  -ConexaoComInternet(): Boolean
+  +exibirPagina(): void
+  +adicionarNovaAba(): void
+  +atualizarPagina(): void
+}
+note top of NavegadorInternet
+  Interface que representa um navegador de internet.
+  Pode exibir páginas, abrir novas abas e atualizar a página atual.
+end note
+
+entity "IPhone" as IPhone {
+  -Musica[] musicas
+  -Contato[] contatos
+  -ConexaoComInternet(): Boolean
+  +tocar(): void
+  +pausar(): void
+  +selecionarMusica(): void
+  +ligar(): void
+  +atender(): void
+  +iniciarCorreioVoz(): void
+  +exibirPagina(): void
+  +adicionarNovaAba(): void
+  +atualizarPagina(): void
+}
+IPhone --> AparelhoTelefonico
+IPhone --> NavegadorInternet
+IPhone --> ReprodutorMusical
+ReprodutorMusical --o Musica
+AparelhoTelefonico --o Contato
+ReprodutorMusical <-- Walkman
+ReprodutorMusical <-- Discman
+NavegadorInternet <-- FireFox
+NavegadorInternet <-- Chrome
+
+@enduml
