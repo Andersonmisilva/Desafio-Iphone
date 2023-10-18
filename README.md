@@ -19,7 +19,7 @@ Este projeto contém a implementação de um simulador das funcionalidades de um
 
 ## Diagrama UML
 
-Este projeto foi desenvolvido com o auxílio de um diagrama UML para visualização da estrutura de classes. O diagrama pode ser encontrado no arquivo [diagrama.uml](path/to/diagram.uml).
+Este projeto foi desenvolvido com o auxílio de um diagrama UML para visualização da estrutura de classes. O diagrama pode ser encontrado no arquivo [[diagrama.uml](path/to/diagram.uml).](https://github.com/Andersonmisilva/Desafio-Iphone/blob/main/UML/Diagrama%20UML%20iphone.png)
 
 ## Executando o Projeto
 
