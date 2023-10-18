@@ -1,0 +1,16 @@
+# Ignorar arquivos compilados
+*.class
+
+# Ignorar pastas de build
+out/
+bin/
+
+# Ignorar configurações específicas da IDE IntelliJ IDEA
+.idea/
+
+# Ignorar arquivos de configuração do Visual Studio Code
+.vscode/
+
+# Ignorar arquivos temporários
+*.log
+*.swp
